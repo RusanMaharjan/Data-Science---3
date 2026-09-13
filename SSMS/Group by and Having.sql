@@ -90,3 +90,9 @@ from (
 	having count(order_id) > 30
 ) as data;
 
+--PowerBi
+--Tableau
+--Apache Superset
+--Orange3
+
+
