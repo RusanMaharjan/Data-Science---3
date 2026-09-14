@@ -1,0 +1,192 @@
+Types of Machine Learning
+------------------------------
+1. Supervised Learning
+    -> It uses labeled data.
+    -> Features and Target
+    -> Features can be multiple but target must be one.
+
+    Types of supervised learning
+    --------------------------------
+    a. Regression
+        - If we have to predict or recommend continuous data.
+        - Types of Regression
+        ------------------------
+        i. Simple Regression
+            - One Feature and One Target
+
+        ii. Multiple Regression
+            - Multiple Feature and One Target
+
+    b. Classification
+        - If we have to predict or recommend discrete / categorical data.
+        Types of Classifiction
+        ----------------------------
+        i. Binary Class Classification
+            -> 0/1, True/False, Yes/No
+
+        ii. Multi Class Classification
+            -> 0/1/2/3, High/Medium/Low
+
+    Algorithms
+    ---------------
+    1. Linear Regression -- Only for regression
+
+    -- For both regression / classification
+    2. Random Forest Regressor / Classifier
+    3. XGBoost Regressor / Classifier
+    4. K Nearest Regressor / Classifier
+    5. Support Vector Regressor / Classifier
+
+    6. Logistic Regression -- Only for classification
+
+2. Unsupervised Learning
+    -> It uses unlabeled data.
+    -> It only has features.
+
+    Types of Unsupervised Learning
+    ----------------------------------
+    a. Clustering
+
+    Algorithms
+    -------------
+    1. K-Means Clustering
+    2. Agglomerative Clustering
+    3. Hierarchical Clustering
+    4. Principle Component Analysis
+
+3. Reinforcement Learning
+    -> Self learning model.
+    -> First we have to train using labeled data.
+
+Process of Machine Learning
+------------------------------
+1. Data Wrangling (Data Cleaning, Feature Engineering, Data Analysis, Data Visualization)
+
+2. Separate Feature and Target
+    - All features must be independent to each other.
+    - Target must be dependent to all features.
+
+3. Data Train Test Split
+    -> train_test_split(
+            features, target, test_size=0.2, random_state=index (globally -> 42)
+       )
+    -> 80/20 Rule (80% Training / 20% Testing)
+    -> 70/30
+    -> 60/40
+    -> 50/50
+
+    -> Random State
+    --------------------
+    -> Shuffle data to separate training and testing record.
+    -> index (42) -> Extract 20% of data from 42th index after shuffling. 
+
+4. Feature Scaling
+    -> To convert data to equal set of range of values.
+
+    -> Standard Scaler
+        -> If our row of data has outliers.
+        -> (Xi - Mean)/sd
+        -> Best Range (1 to -1) -> Considerable range (3 to -3)
+
+
+    -> Min Max Scaler
+        -> If our row of data doesnot has outliers.
+        -> (Xi - Min_val) / (Max_val - Min_val)
+        -> Range (0 to 1)
+
+5. Define Model
+6. Fit data to model (80% Training Record (If Supervised Learning both feature and target / If Clustering Feature ))
+7. Predict data using Test Record (20%)
+8. Calculation of Metrics
+    a. Regression Models
+        i. MAE (Mean Absolute Error)
+        ii. MSE (Mean Squared Error)
+        iii. RMSE (Root Mean Squared Error)
+        iv. R2 Score (Resudial Score) -> Accurcacy of Model
+
+    b. Classification
+        i. Classification Report
+        ii. Confusion Matrix
+
+    c. Clustering
+        i. Sillhouete Score -> Shows how well clusters are formed.
+
+9. Visualization
+10. Predict New Data
+
+
+Label Encoding
+----------------
+1. Label Encoder
+    -> Sort data into ascending order
+    -> Red, Green, Blue -> Blue -> 0, Green -> 1, Red -> 2
+
+2. One Hot Encoder
+
+       Blue      Green       Red        
+Blue   1           0          0
+Green  0           1          0
+Red    0           0          1
+Blue   1           0          0
+
+
+3. Manual Encoder (Dictionary Mapping)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
