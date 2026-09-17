@@ -1,0 +1,67 @@
+Logistic Regression
+-----------------------
+- Classification Algorithm
+    - Binary Class Classification -> Logistic Regression
+    - Multi Class Classification
+
+Stratify
+-----------
+- We only need to stratify Target Data (Y).
+- To send equal % of data to both training and testing data not to make model biasness.
+- 70% -> Healthy, 30% -> Unhealthy
+
+80/20 split
+
+Training Target Data
+----------------------
+Healthy -> 70% -> 40%
+Unhealthy -> 30% -> 40%
+
+Testing Target Data
+---------------------
+Healthy -> 70% -> 10%
+Unhealthy -> 30% -> 10%
+
+X_train, X_test, Y_train, Y_test = train_test_split(
+    X, Y, test_size=0.2, random_state=42, stratify=Y
+)
+
+Logistic Model
+--------------------
+Arguments for model
+    - solver -> liblinear, lbfgs (default), saga
+    - class_weight -> None (default), balanced
+    - random_state -> 42
+
+Metrics
+----------
+- classification report
+- confusion matrix
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
