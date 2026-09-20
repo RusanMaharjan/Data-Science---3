@@ -29,14 +29,36 @@ X_train, X_test, Y_train, Y_test = train_test_split(
 Logistic Model
 --------------------
 Arguments for model
-    - solver -> liblinear, lbfgs (default), saga
-    - class_weight -> None (default), balanced
+    - solver
+        1. liblinear -> If our dataset is small sized (0 - 30000), 
+
+        2. lbfgs (default) -> If our dataset is medium sized (30k >, below 1 lakhs), 
+            - Limited-Memory-Broyden–Fletcher–Goldfarb–Shanno
+
+        3. saga -> If our dataset is large sized (> 1 lakhs)
+
+    - class_weight
+        - None (default)
+        - balanced
+
     - random_state -> 42
 
 Metrics
 ----------
 - classification report
+    - Precision
+    - Recall
+    - F1-Score
+    - Support
+    - Accuracy - 80%
+    - Macro Avg
+    - Weighted Avg
+
 - confusion matrix
+    - True Positive
+    - True Negative
+    - False Positive
+    - False Negative
 
 
 
