@@ -145,4 +145,34 @@ with chart3:
     )
     st.plotly_chart(fig3)
     
-st.dataframe(df)
+    
+    
+## Search Bar
+st.markdown(subHeaderStyle('Data View'), unsafe_allow_html=True)
+
+search_col1, search_col_2 = st.columns(2)
+
+search_columns = {
+    'pizza_size': 'Pizza Size', 'pizza_category': 'Pizza Category', 'pizza_name': 'Pizza Name'
+}
+
+with search_col1:
+    search_from = st.selectbox(
+        'Search Through',
+        options = list(search_columns.keys()),
+        format_func = lambda x : search_columns[x]
+    )  
+
+with search_col_2:
+    query = st.text_input(f'Search: {search_columns[search_from]}', placeholder='Eg:. Classic / S / The Greek Pizza')
+
+if st.button('Filter🔎'):
+    if query:
+        result = df[df[search_from].astype(str).str.contains(query, case=False)][['pizza_name', 'pizza_size', 'pizza_category']]
+    else:
+        st.warning('No data found.')
+        result = df[['pizza_name', 'pizza_size', 'pizza_category']]
+        
+    st.dataframe(result)    
+else:
+    st.dataframe(df[['pizza_name', 'pizza_size', 'pizza_category']])
