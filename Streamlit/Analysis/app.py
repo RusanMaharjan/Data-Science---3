@@ -13,7 +13,7 @@ st.set_page_config(
 # Import Data and store all data in cache memory
 @st.cache_data
 def load_data():
-    df = pd.read_csv('pizza_sales.csv')
+    df = pd.read_csv('Streamlit/Analysis/pizza_sales.csv')
     df['order_date'] = pd.to_datetime(df['order_date'], format='mixed')
     df['month_name'] = df['order_date'].dt.month_name()
     return df
