@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from app.models import read_logistic_files
+from models import read_logistic_files
 
 
 logistc_model, logistic_scaler = read_logistic_files()
