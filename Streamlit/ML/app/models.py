@@ -1,10 +1,21 @@
+# import joblib
+
+# LOGISTIC_MODEL_PATH = 'models/Logistic/logistic_model.pkl'
+# LOGISTIC_SCALER_PATH = 'models/Logistic/logistic_scaler.pkl'
+
+# SVM_MODEL_PATH = 'models/SVM/svm_model.pkl'
+# SVM_SCALER_PATH = 'models/SVM/svm_scaler.pkl'
+
+from pathlib import Path
 import joblib
 
-LOGISTIC_MODEL_PATH = 'models/Logistic/logistic_model.pkl'
-LOGISTIC_SCALER_PATH = 'models/Logistic/logistic_scaler.pkl'
+BASE_DIR = Path(__file__).resolve().parent.parent
 
-SVM_MODEL_PATH = 'models/SVM/svm_model.pkl'
-SVM_SCALER_PATH = 'models/SVM/svm_scaler.pkl'
+LOGISTIC_MODEL_PATH = BASE_DIR / "models" / "Logistic" / "logistic_model.pkl"
+LOGISTIC_SCALER_PATH = BASE_DIR / "models" / "Logistic" / "logistic_scaler.pkl"
+
+SVM_MODEL_PATH = BASE_DIR / "models" / "SVM" / "svm_model.pkl"
+SVM_SCALER_PATH = BASE_DIR / "models" / "SVM" / "svm_scaler.pkl"
 
 def read_logistic_files():
     model = joblib.load(LOGISTIC_MODEL_PATH)
