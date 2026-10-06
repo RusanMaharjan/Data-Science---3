@@ -1,0 +1,20 @@
+import joblib
+
+LOGISTIC_MODEL_PATH = 'models/Logistic/logistic_model.pkl'
+LOGISTIC_SCALER_PATH = 'models/Logistic/logistic_scaler.pkl'
+
+SVM_MODEL_PATH = 'models/SVM/logistic_model.pkl'
+SVM_SCALER_PATH = 'models/SVM/logistic_scaler.pkl'
+
+def read_logistic_files():
+    model = joblib.load(LOGISTIC_MODEL_PATH)
+    scaler = joblib.load(LOGISTIC_SCALER_PATH)
+
+    return model, scaler
+
+
+def read_svm_files():
+    model = joblib.load(SVM_MODEL_PATH)
+    scaler = joblib.load(SVM_SCALER_PATH)
+    
+    return model, scaler
