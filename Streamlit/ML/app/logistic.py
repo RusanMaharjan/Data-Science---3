@@ -1,4 +1,10 @@
 import streamlit as st
+import numpy as np
+from app.models import read_logistic_files
+
+
+logistc_model, logistic_scaler = read_logistic_files()
+
 
 st.header('Cardiovascular Disease Prediction')
 st.subheader('Using Logistic Regression')
@@ -99,3 +105,17 @@ active = st.sidebar.radio(
     options = list(active_dict.keys()),
     format_func = lambda x: active_dict.get(x)
 )
+
+if st.button('Predict Cardio'):
+    input_data = np.array([[
+        age, gender, height, weight, ap_hi, ap_lo, cholesterol, gluc, smoke, alco, active
+    ]])
+    input_scale = logistic_scaler.transform(input_data)
+    prediction = logistc_model.predict(input_scale)[0]
+    
+    if prediction == 0:
+        st.write('No cardio disease found.')
+        st.success('Likely to be Healthy.')
+    else:
+        st.write('Cardio disease found.')
+        st.warning('Likely to be UnHealthy.')

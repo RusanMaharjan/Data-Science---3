@@ -1,4 +1,8 @@
 import streamlit as st
+import numpy as np
+from app.models import read_svm_files
+
+svm_model, svm_scaler = read_svm_files()
 
 st.header('Cardiovascular Disease Prediction')
 st.subheader('Using Support Vector Classifier')
@@ -98,3 +102,18 @@ active = st.sidebar.radio(
     options = list(active_dict.keys()),
     format_func = lambda x: active_dict.get(x)
 )
+
+if st.button('Predict Cardio'):
+    input_data = np.array([[
+        age, gender, height, weight, ap_hi, ap_lo, cholesterol, gluc, smoke, alco, active
+    ]])
+    input_scale = svm_scaler.transform(input_data)
+    prediction = svm_model.predict(input_scale)[0]
+    
+    if prediction == 0:
+        st.write('No cardio disease found.')
+        st.success('Likely to be Healthy.')
+    else:
+        st.write('Cardio disease found.')
+        st.warning('Likely to be UnHealthy.')
+    
