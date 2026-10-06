@@ -8,9 +8,6 @@
 
 from pathlib import Path
 import joblib
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.svm import SVC
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
