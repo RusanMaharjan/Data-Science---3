@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-from models import read_svm_files
+from app.models import read_svm_files
 
 svm_model, svm_scaler = read_svm_files()
 
